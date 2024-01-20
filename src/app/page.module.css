@@ -1,5 +1,7 @@
 .main {
   max-width: 1536px;
+  display: flex;
+  justify-content: center;
 }
 
 .teste {
