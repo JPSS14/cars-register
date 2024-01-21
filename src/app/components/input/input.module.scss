@@ -1,0 +1,18 @@
+.input {
+  border: 2px solid var(--mainThemeColor);
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  height: 34px;
+  padding: 8px;
+  color: var(--mainThemeColor);
+}
+
+.label {
+  color: var(--mainThemeColor);
+  font-size: 16px;
+
+  & + .input {
+    margin-top: 4px;
+  }
+}
