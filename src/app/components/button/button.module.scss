@@ -37,11 +37,12 @@
 
   &.secondary {
     background-color: var(--lightThemeColor);
-    color: #fff;
+    color: var(--darkThemeColor);
 
     &:hover {
       background-color: var(--lightThemeColorHover);
       cursor: pointer;
+      color: #fff;
     }
 
     &.outlined {
