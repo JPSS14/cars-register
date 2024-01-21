@@ -9,9 +9,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --main-theme-color: #038c73;
-  --light-theme-color: #05e3ba;
-  --dark-theme-color: #014034;
+  --mainThemeColor: #038c73;
+  --mainThemeColorHover: #02705c;
+  --lightThemeColor: #05e3ba;
+  --lightThemeColorHover: #04b695;
+  --darkThemeColor: #014034;
+  --darkThemeColorHover: #04b695;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
