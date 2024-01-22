@@ -1,5 +1,6 @@
 export { Banner } from "./banner";
 export { Button } from "./button";
+export { Card } from "./card";
 export { Header } from "./header";
 export { Hr } from "./hr";
 export { Input } from "./input";
