@@ -6,3 +6,4 @@ export { Input } from "./input";
 export { Search } from "./search";
 export { TextArea } from "./text-area";
 export { TopSearch } from "./top-search";
+export { Rating } from "./rating";
