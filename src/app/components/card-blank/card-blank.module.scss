@@ -1,0 +1,18 @@
+.cardBlank {
+  width: 297px;
+  height: 479px;
+  border-radius: 16px;
+  border: 5px dashed var(--mainThemeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .registerText {
+    margin-top: 16px;
+    color: var(--mainThemeColor);
+    font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+    width: 150px;
+  }
+}
