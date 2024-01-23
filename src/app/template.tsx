@@ -1,4 +1,4 @@
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 
 export default function HomeTemplate({
   children,
@@ -9,6 +9,7 @@ export default function HomeTemplate({
     <div>
       <Header />
       <div>{children}</div>
+      <Footer />
     </div>
   );
 }

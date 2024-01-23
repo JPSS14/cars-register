@@ -3,6 +3,7 @@ export { Button } from "./button";
 export { Card } from "./card";
 export { CardBlank } from "./card-blank";
 export { CardList } from "./card-list";
+export { Footer } from "./footer";
 export { Header } from "./header";
 export { Hr } from "./hr";
 export { Input } from "./input";
