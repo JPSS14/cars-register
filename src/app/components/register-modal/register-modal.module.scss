@@ -1,0 +1,16 @@
+.inputsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 72.2px);
+
+  & input,
+  select {
+    margin-bottom: 16px;
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+}

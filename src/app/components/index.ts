@@ -9,6 +9,7 @@ export { Hr } from "./hr";
 export { Input } from "./input";
 export { Modal } from "./modal";
 export { Rating } from "./rating";
+export { RegisterModal } from "./register-modal";
 export { Search } from "./search";
 export { Select } from "./select";
 export { Stepper } from "./stepper";
