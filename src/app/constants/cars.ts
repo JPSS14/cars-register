@@ -2,6 +2,7 @@ export interface Cars {
   automaker: string;
   model: string;
   automakerModel: string;
+  year: number;
   image: string;
   power: number;
   torque: number;
@@ -12,11 +13,12 @@ export interface Cars {
   }[];
 }
 
-export const Cars: Cars[] = [
+export const cars: Cars[] = [
   {
     automaker: "Ferrari",
     model: "F40",
     automakerModel: "Ferrari F40",
+    year: 1987,
     image: "/ferrari-f40.webp",
     power: 478,
     torque: 58.8,
@@ -32,6 +34,7 @@ export const Cars: Cars[] = [
     automaker: "McLaren",
     model: "Senna",
     automakerModel: "Mclaren Senna",
+    year: 2020,
     image: "/mclaren-senna.jpg",
     power: 789,
     torque: 81.57,
@@ -51,6 +54,7 @@ export const Cars: Cars[] = [
     automaker: "Porsche",
     model: "Taycan 4S Cross Turismo",
     automakerModel: "Porsche Taycan 4S Cross Turismo",
+    year: 2022,
     image: "/taycan-4s-cross-turismo.webp",
     power: 571,
     torque: 66.28,
@@ -66,6 +70,7 @@ export const Cars: Cars[] = [
     automaker: "Lamborghini",
     model: "Aventador SVJ Roadster",
     automakerModel: "Lamborghini Aventador SVJ Roadster",
+    year: 2020,
     image: "/Lamborghini_aventador-svj-roadster.png",
     power: 770,
     torque: 73.41,
