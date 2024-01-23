@@ -10,6 +10,7 @@ export { Input } from "./input";
 export { Modal } from "./modal";
 export { Rating } from "./rating";
 export { Search } from "./search";
+export { Select } from "./select";
+export { Stepper } from "./stepper";
 export { TextArea } from "./text-area";
 export { TopSearch } from "./top-search";
-export { Select } from "./select";
