@@ -12,3 +12,4 @@ export { Rating } from "./rating";
 export { Search } from "./search";
 export { TextArea } from "./text-area";
 export { TopSearch } from "./top-search";
+export { Select } from "./select";
