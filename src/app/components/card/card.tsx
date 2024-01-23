@@ -1,23 +1,33 @@
 import Image from "next/image";
 import styles from "./card.module.scss";
 import { Button, Rating } from "..";
+import { Cars } from "@/app/constants/cars";
 
-export const Card = () => {
+interface CardProps {
+  item: Cars;
+}
+
+export const Card = ({ item }: CardProps) => {
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
-        <Image src="/ferrari-f40.webp" width={888} height={575} alt="image" />
+        <Image
+          src={item.image}
+          width={888}
+          height={575}
+          alt={item.automakerModel}
+        />
         <div className={styles.logoContainer}>
           <Image
-            src="/ferrari-logo.png"
+            src={`/${item.automaker}-logo.png`}
             width={50}
             height={50}
-            alt="Car logo"
+            alt={item.automaker}
           />
         </div>
         <header className={styles.carNameContainer}>
-          <h1 className={styles.automaker}>Ferrari</h1>
-          <p className={styles.carName}>F40</p>
+          <h1 className={styles.automaker}>{item.automaker}</h1>
+          <p className={styles.carName}>{item.model}</p>
         </header>
         <div className={styles.statusContainer}>
           <div className={styles.ratingStatus}>
