@@ -1,4 +1,6 @@
+"use client";
 import { Footer, Header } from "./components";
+import { RegisterContextProvider } from "./contexts/register-context";
 
 export default function HomeTemplate({
   children,
@@ -7,9 +9,11 @@ export default function HomeTemplate({
 }) {
   return (
     <div>
-      <Header />
-      <div>{children}</div>
-      <Footer />
+      <RegisterContextProvider>
+        <Header />
+        <div>{children}</div>
+        <Footer />
+      </RegisterContextProvider>
     </div>
   );
 }
