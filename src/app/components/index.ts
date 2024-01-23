@@ -7,6 +7,7 @@ export { Footer } from "./footer";
 export { Header } from "./header";
 export { Hr } from "./hr";
 export { Input } from "./input";
+export { Modal } from "./modal";
 export { Rating } from "./rating";
 export { Search } from "./search";
 export { TextArea } from "./text-area";
