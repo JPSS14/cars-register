@@ -9,11 +9,11 @@ interface SearchCar {
 }
 
 export const Search = () => {
-  const { setOpenRegisterModal } = useRegisterContext();
+  const { setOpenRegisterModal, handleFilterCars } = useRegisterContext();
   const { register, handleSubmit } = useForm<SearchCar>();
 
   const onSubmit: SubmitHandler<SearchCar> = (data) => {
-    console.log(data);
+    handleFilterCars(data.carName);
   };
 
   return (
