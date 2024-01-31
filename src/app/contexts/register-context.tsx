@@ -15,6 +15,8 @@ type RegisterContext = {
   setStage: (stage: StageType) => void;
   carList: Cars[];
   setCarList: Dispatch<SetStateAction<Cars[]>>;
+  carListFiltered: Cars[];
+  handleFilterCars: (car: string) => void;
 };
 
 export const RegisterContext = createContext({} as RegisterContext);
@@ -29,6 +31,14 @@ export const RegisterContextProvider = ({
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
   const [stage, setStage] = useState<StageType>("initial");
   const [carList, setCarList] = useState(cars);
+  const [carListFiltered, setCarListFiltered] = useState(cars);
+
+  const handleFilterCars = (car: string) => {
+    const filtered = carList.filter((item) =>
+      item.automakerModel.toLowerCase().includes(car.toLowerCase())
+    );
+    setCarListFiltered(filtered);
+  };
 
   return (
     <RegisterContext.Provider
@@ -39,6 +49,8 @@ export const RegisterContextProvider = ({
         setStage,
         carList,
         setCarList,
+        carListFiltered,
+        handleFilterCars,
       }}
     >
       {children}
