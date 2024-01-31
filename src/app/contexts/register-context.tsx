@@ -1,11 +1,20 @@
-import { createContext, useContext, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 import { StageType } from "../components/stepper/types";
+import { Cars, cars } from "../constants/cars";
 
 type RegisterContext = {
   openRegisterModal: boolean;
   setOpenRegisterModal: (open: boolean) => void;
   stage: StageType;
   setStage: (stage: StageType) => void;
+  carList: Cars[];
+  setCarList: Dispatch<SetStateAction<Cars[]>>;
 };
 
 export const RegisterContext = createContext({} as RegisterContext);
@@ -19,6 +28,7 @@ export const RegisterContextProvider = ({
 }: RegisterContextProviderProps) => {
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
   const [stage, setStage] = useState<StageType>("initial");
+  const [carList, setCarList] = useState(cars);
 
   return (
     <RegisterContext.Provider
@@ -27,6 +37,8 @@ export const RegisterContextProvider = ({
         setOpenRegisterModal,
         stage,
         setStage,
+        carList,
+        setCarList,
       }}
     >
       {children}
