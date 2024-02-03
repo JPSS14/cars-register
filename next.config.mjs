@@ -1,4 +1,14 @@
+import { hostname } from "os";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "cdn.motor1.com",
+      },
+    ],
+  },
+};
 
 export default nextConfig;
