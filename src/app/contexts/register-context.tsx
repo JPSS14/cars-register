@@ -3,6 +3,7 @@ import {
   SetStateAction,
   createContext,
   useContext,
+  useEffect,
   useState,
 } from "react";
 import { StageType } from "../components/stepper/types";
@@ -32,6 +33,10 @@ export const RegisterContextProvider = ({
   const [stage, setStage] = useState<StageType>("initial");
   const [carList, setCarList] = useState(cars);
   const [carListFiltered, setCarListFiltered] = useState(cars);
+
+  useEffect(() => {
+    setCarListFiltered(carList);
+  }, [carList]);
 
   const handleFilterCars = (car: string) => {
     const filtered = carList.filter((item) =>
