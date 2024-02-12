@@ -5,7 +5,7 @@ import { useRegisterContext } from "@/app/contexts/register-context";
 import styles from "./register-modal.module.scss";
 import { Cars } from "@/app/constants/cars";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -21,6 +21,12 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     register,
     formState: { errors },
   } = useForm<Cars>();
+
+  const [descriptionIndex, setDescriptionIndex] = useState<number[]>([0]);
+
+  const handleAddDescription = () => {
+    setDescriptionIndex([...descriptionIndex, descriptionIndex.length]);
+  };
 
   const onSubmit: SubmitHandler<Cars> = (data) => {
     setOpenRegisterModal(false);
@@ -93,20 +99,30 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
 
         {stage === "description" && (
           <div className={styles.inputsSection}>
-            <div>
-              <Input
-                {...register("description")}
-                label="Título"
-                placeholder="Digite um título"
-              />
+            {descriptionIndex.map((index) => (
+              <div key={index}>
+                <Input
+                  {...register(`description.${index}.title`)}
+                  label="Título"
+                  placeholder="Digite um título"
+                />
 
-              <TextArea
-                label="Velocidade Máxima"
-                placeholder="Digite a velocidade máxima"
-                {...register("description")}
-              />
-            </div>
+                <TextArea
+                  label="Velocidade Máxima"
+                  placeholder="Digite a velocidade máxima"
+                  {...register(`description.${index}.textDescription`)}
+                />
+              </div>
+            ))}
             <div className={styles.footer}>
+              <Button
+                type="button"
+                color="secondary"
+                variant="outlined"
+                onClick={() => handleAddDescription()}
+              >
+                Adicionar Descrição
+              </Button>
               <Button type="submit">Finalizar</Button>
             </div>
           </div>
