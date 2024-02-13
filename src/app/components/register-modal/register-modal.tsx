@@ -99,21 +99,23 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
 
         {stage === "description" && (
           <div className={styles.inputsSection}>
-            {descriptionIndex.map((index) => (
-              <div key={index}>
-                <Input
-                  {...register(`description.${index}.title`)}
-                  label="Título"
-                  placeholder="Digite um título"
-                />
+            <div className={styles.description}>
+              {descriptionIndex.map((index) => (
+                <div key={index}>
+                  <Input
+                    {...register(`description.${index}.title`)}
+                    label="Título"
+                    placeholder="Digite um título"
+                  />
 
-                <TextArea
-                  label="Velocidade Máxima"
-                  placeholder="Digite a velocidade máxima"
-                  {...register(`description.${index}.textDescription`)}
-                />
-              </div>
-            ))}
+                  <TextArea
+                    label="Velocidade Máxima"
+                    placeholder="Digite a velocidade máxima"
+                    {...register(`description.${index}.textDescription`)}
+                  />
+                </div>
+              ))}
+            </div>
             <div className={styles.footer}>
               <Button
                 type="button"
