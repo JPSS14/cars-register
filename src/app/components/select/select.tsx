@@ -16,7 +16,10 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             {label}
           </label>
         )}
-        <select className={styles.select} {...props}>
+        <select className={styles.select} {...props} defaultValue="">
+          <option disabled value="">
+            Selecione uma opção
+          </option>
           {items.map((item) => (
             <option key={item.id} className={styles.option}>
               {item.name}
