@@ -5,18 +5,23 @@ import React from "react";
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   items: Automakers[];
+  errorMessage?: string;
 }
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ label, name, items, ...props }, _ref) => {
+  ({ label, errorMessage, name, items, ...props }, _ref) => {
     return (
-      <>
+      <div className={styles.selectContainer}>
         {label && (
           <label htmlFor={name} className={styles.label}>
             {label}
           </label>
         )}
-        <select className={styles.select} {...props} defaultValue="">
+        <select
+          className={`${styles.select} ${errorMessage && styles.errorSelect}`}
+          {...props}
+          defaultValue=""
+        >
           <option disabled value="">
             Selecione uma opção
           </option>
@@ -26,7 +31,10 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             </option>
           ))}
         </select>
-      </>
+        {errorMessage && (
+          <span className={styles.errorMessage}>{errorMessage}</span>
+        )}
+      </div>
     );
   }
 );
