@@ -1,3 +1,7 @@
+.inputContainer {
+  position: relative;
+}
+
 .input {
   border: 2px solid var(--mainThemeColor);
   width: 100%;
@@ -15,4 +19,18 @@
   & + .input {
     margin-top: 4px;
   }
+}
+
+.errorInput {
+  border-color: red;
+  color: red;
+}
+
+.errorMessage {
+  color: red;
+  position: absolute;
+  width: 100%;
+  font-size: 0.7rem;
+  top: 79.5%;
+  left: 1%;
 }
