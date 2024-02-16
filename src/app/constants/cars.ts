@@ -31,7 +31,7 @@ export const cars: Cars[] = [
     image: "/ferrari-f40.webp",
     power: {
       value: 478,
-      rating: 0,
+      rating: 3,
     },
     torque: {
       value: 58.8,
@@ -56,7 +56,7 @@ export const cars: Cars[] = [
     image: "/mclaren-senna.jpg",
     power: {
       value: 789,
-      rating: 0,
+      rating: 5,
     },
     torque: {
       value: 81.57,
@@ -85,7 +85,7 @@ export const cars: Cars[] = [
     image: "/taycan-4s-cross-turismo.webp",
     power: {
       value: 571,
-      rating: 0,
+      rating: 4,
     },
     torque: {
       value: 66.28,
@@ -110,7 +110,7 @@ export const cars: Cars[] = [
     image: "/Lamborghini_aventador-svj-roadster.png",
     power: {
       value: 770,
-      rating: 0,
+      rating: 5,
     },
     torque: {
       value: 73.41,
