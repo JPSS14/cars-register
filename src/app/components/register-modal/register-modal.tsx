@@ -19,8 +19,11 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     handleSubmit,
     setValue,
     register,
+    trigger,
     formState: { errors },
-  } = useForm<Cars>();
+  } = useForm<Cars>({
+    mode: "all",
+  });
 
   const [descriptionIndex, setDescriptionIndex] = useState<number[]>([0]);
 
@@ -36,7 +39,28 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
 
   const inputRef = useRef(null);
 
+  const validateFields = async () => {
+    const isValid = await trigger();
+    if (isValid) {
+      setStage("status");
+      return isValid;
+    }
+    return isValid;
+  };
+
+  const nextStage = async () => {
+    const isValid = await validateFields();
+    if (isValid) {
+      if (stage === "initial") {
+        setStage("status");
+      } else if (stage === "status") {
+        setStage("description");
+      }
+    }
+  };
+
   return (
+    // TODO: Quebrar steps do formulário em arquivos diferentes
     <Modal isOpen={isOpen}>
       <Stepper />
       <form onSubmit={handleSubmit(onSubmit)} style={{ height: "100%" }}>
@@ -46,28 +70,39 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
               <Controller
                 name="automaker"
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
-                  <Select {...field} items={automakers} label="Montadora" />
+                  <Select
+                    {...field}
+                    items={automakers}
+                    label="Montadora"
+                    errorMessage={
+                      errors.automaker && "Este campo é obrigatório!"
+                    }
+                  />
                 )}
               />
               <Input
-                {...register("model")}
+                {...register("model", { required: true })}
                 label="Modelo"
                 placeholder="Digite o nome do modelo"
+                errorMessage={errors.model && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("year")}
+                {...register("year", { required: true })}
                 label="Ano"
                 placeholder="Digite o ano do carro"
+                errorMessage={errors.year && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("image")}
+                {...register("image", { required: true })}
                 label="Imagem"
                 placeholder="Selecione uma imagem 1920px"
+                errorMessage={errors.image && "Este campo é obrigatório!"}
               />
             </div>
             <div className={styles.footer}>
-              <Button onClick={() => setStage("status")}>Próximo</Button>
+              <Button onClick={nextStage}>Próximo</Button>
             </div>
           </div>
         )}
@@ -76,23 +111,28 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
           <div className={styles.inputsSection}>
             <div>
               <Input
-                {...register("power")}
+                {...register("power", { required: true })}
                 label="Potência"
                 placeholder="Digite a potência do carro (cv)"
+                errorMessage={errors.power && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("torque")}
+                {...register("torque", { required: true })}
                 label="Torque"
                 placeholder="Digite o torque do carro (kgfm)"
+                errorMessage={errors.torque && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("maximumSpeed")}
+                {...register("maximumSpeed", { required: true })}
                 label="Velocidade Máxima"
                 placeholder="Digite a velocidade máxima"
+                errorMessage={
+                  errors.maximumSpeed && "Este campo é obrigatório!"
+                }
               />
             </div>
             <div className={styles.footer}>
-              <Button onClick={() => setStage("description")}>Próximo</Button>
+              <Button onClick={nextStage}>Próximo</Button>
             </div>
           </div>
         )}
@@ -109,8 +149,8 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                   />
 
                   <TextArea
-                    label="Velocidade Máxima"
-                    placeholder="Digite a velocidade máxima"
+                    label="Texto"
+                    placeholder="Digite uma descrição"
                     {...register(`description.${index}.textDescription`)}
                   />
                 </div>
