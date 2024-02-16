@@ -35,7 +35,7 @@ export const cars: Cars[] = [
     },
     torque: {
       value: 58.8,
-      rating: 0,
+      rating: 4,
     },
     maximumSpeed: {
       value: 324,
@@ -60,7 +60,7 @@ export const cars: Cars[] = [
     },
     torque: {
       value: 81.57,
-      rating: 0,
+      rating: 5,
     },
     maximumSpeed: {
       value: 335,
@@ -89,7 +89,7 @@ export const cars: Cars[] = [
     },
     torque: {
       value: 66.28,
-      rating: 0,
+      rating: 4,
     },
     maximumSpeed: {
       value: 240,
@@ -114,7 +114,7 @@ export const cars: Cars[] = [
     },
     torque: {
       value: 73.41,
-      rating: 0,
+      rating: 4,
     },
     maximumSpeed: {
       value: 350,

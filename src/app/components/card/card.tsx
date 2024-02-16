@@ -32,15 +32,15 @@ export const Card = ({ item }: CardProps) => {
         <div className={styles.statusContainer}>
           <div className={styles.ratingStatus}>
             <p>Potência:</p>
-            <Rating />
+            <Rating value={1} />
           </div>
           <div className={styles.ratingStatus}>
             <p>Torque:</p>
-            <Rating />
+            <Rating value={item.torque.rating} />
           </div>
           <div className={styles.ratingStatus}>
             <p>Velocidade Máx.:</p>
-            <Rating />
+            <Rating value={1} />
           </div>
         </div>
         <footer className={styles.footer}>
