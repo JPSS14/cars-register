@@ -1,6 +1,8 @@
-.container {
+.textAreaContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .textArea {
@@ -23,4 +25,18 @@
   & + .textArea {
     margin-top: 4px;
   }
+}
+
+.errorTextArea {
+  border-color: red;
+  color: red;
+}
+
+.errorMessage {
+  color: red;
+  position: absolute;
+  width: 100%;
+  font-size: 0.7rem;
+  top: 84.5%;
+  left: 1%;
 }
