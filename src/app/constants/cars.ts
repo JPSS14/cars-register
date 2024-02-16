@@ -4,9 +4,18 @@ export interface Cars {
   automakerModel: string;
   year: number;
   image: string;
-  power: number;
-  torque: number;
-  maximumSpeed: number;
+  power: {
+    value: number;
+    rating: number;
+  };
+  torque: {
+    value: number;
+    rating: number;
+  };
+  maximumSpeed: {
+    value: number;
+    rating: number;
+  };
   description?: {
     title?: string;
     textDescription?: string;
@@ -20,9 +29,18 @@ export const cars: Cars[] = [
     automakerModel: "Ferrari F40",
     year: 1987,
     image: "/ferrari-f40.webp",
-    power: 478,
-    torque: 58.8,
-    maximumSpeed: 324,
+    power: {
+      value: 478,
+      rating: 0,
+    },
+    torque: {
+      value: 58.8,
+      rating: 0,
+    },
+    maximumSpeed: {
+      value: 324,
+      rating: 0,
+    },
     description: [
       {
         title: "Origem",
@@ -36,9 +54,18 @@ export const cars: Cars[] = [
     automakerModel: "Mclaren Senna",
     year: 2020,
     image: "/mclaren-senna.jpg",
-    power: 789,
-    torque: 81.57,
-    maximumSpeed: 335,
+    power: {
+      value: 789,
+      rating: 0,
+    },
+    torque: {
+      value: 81.57,
+      rating: 0,
+    },
+    maximumSpeed: {
+      value: 335,
+      rating: 0,
+    },
     description: [
       {
         title: "Origem",
@@ -56,9 +83,18 @@ export const cars: Cars[] = [
     automakerModel: "Porsche Taycan 4S Cross Turismo",
     year: 2022,
     image: "/taycan-4s-cross-turismo.webp",
-    power: 571,
-    torque: 66.28,
-    maximumSpeed: 240,
+    power: {
+      value: 571,
+      rating: 0,
+    },
+    torque: {
+      value: 66.28,
+      rating: 0,
+    },
+    maximumSpeed: {
+      value: 240,
+      rating: 0,
+    },
     description: [
       {
         title: "800-volt architecture",
@@ -72,9 +108,18 @@ export const cars: Cars[] = [
     automakerModel: "Lamborghini Aventador SVJ Roadster",
     year: 2020,
     image: "/Lamborghini_aventador-svj-roadster.png",
-    power: 770,
-    torque: 73.41,
-    maximumSpeed: 350,
+    power: {
+      value: 770,
+      rating: 0,
+    },
+    torque: {
+      value: 73.41,
+      rating: 0,
+    },
+    maximumSpeed: {
+      value: 350,
+      rating: 0,
+    },
     description: [
       {
         title: "Overview",
