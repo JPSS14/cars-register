@@ -42,7 +42,6 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
   const validateFields = async () => {
     const isValid = await trigger();
     if (isValid) {
-      setStage("status");
       return isValid;
     }
     return isValid;
