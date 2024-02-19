@@ -1,5 +1,5 @@
 export const torqueRating = (value: number) => {
-  if (value < 11) {
+  if (value < 11 && value > 0) {
     return 1;
   } else if (value > 11 && value < 18) {
     return 2;
@@ -9,6 +9,8 @@ export const torqueRating = (value: number) => {
     return 4;
   } else if (value > 78) {
     return 5;
+  } else {
+    return 1;
   }
 };
 
@@ -23,6 +25,8 @@ export const powerRating = (value: number) => {
     return 4;
   } else if (value > 590) {
     return 5;
+  } else {
+    return 1;
   }
 };
 
@@ -37,5 +41,7 @@ export const maximumSpeedRating = (value: number) => {
     return 4;
   } else if (value > 320) {
     return 5;
+  } else {
+    return 1;
   }
 };
