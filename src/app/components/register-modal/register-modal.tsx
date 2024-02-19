@@ -6,6 +6,11 @@ import styles from "./register-modal.module.scss";
 import { Cars } from "@/app/constants/cars";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useRef, useState } from "react";
+import {
+  maximumSpeedRating,
+  powerRating,
+  torqueRating,
+} from "@/app/utils/utils";
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -33,8 +38,25 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
 
   const onSubmit: SubmitHandler<Cars> = (data) => {
     setOpenRegisterModal(false);
-    setCarList([...carList, data]);
-    console.log(data);
+
+    const addRatingData: Cars = {
+      ...data,
+      power: {
+        ...data.power,
+        rating: powerRating(data.power.value),
+      },
+      torque: {
+        ...data.torque,
+        rating: torqueRating(data.torque.value),
+      },
+      maximumSpeed: {
+        ...data.maximumSpeed,
+        rating: maximumSpeedRating(data.maximumSpeed.value),
+      },
+    };
+
+    setCarList([...carList, addRatingData]);
+    console.log(addRatingData);
   };
 
   const inputRef = useRef(null);
