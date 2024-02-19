@@ -40,7 +40,7 @@ export const Card = ({ item }: CardProps) => {
           </div>
           <div className={styles.ratingStatus}>
             <p>Velocidade Máx.:</p>
-            <Rating value={1} />
+            <Rating value={item.maximumSpeed.rating} />
           </div>
         </div>
         <footer className={styles.footer}>
