@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   .registerText {
     margin-top: 16px;
@@ -14,5 +15,12 @@
     text-align: center;
     font-weight: 700;
     width: 150px;
+  }
+
+  .registerIcon {
+    font-size: 3.5rem;
+    color: var(--mainThemeColor);
+    width: 100%;
+    margin-top: 16px;
   }
 }
