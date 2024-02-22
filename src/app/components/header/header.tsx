@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Image
-        src="cars-register-logo.svg"
+        src="/cars-register-logo.svg"
         alt="Cars Register Logo"
         width={239}
         height={48}
