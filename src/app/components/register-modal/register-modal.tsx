@@ -41,6 +41,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
 
     const addRatingData: Cars = {
       ...data,
+      id: carList.length + 1,
       power: {
         ...data.power,
         rating: powerRating(data.power.value),
