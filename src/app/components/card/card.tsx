@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./card.module.scss";
 import { Button, Rating } from "..";
 import { Cars } from "@/app/constants/cars";
+import Link from "next/link";
 
 interface CardProps {
   item: Cars;
@@ -44,9 +45,11 @@ export const Card = ({ item }: CardProps) => {
           </div>
         </div>
         <footer className={styles.footer}>
-          <Button color="secondary" fullWidth>
-            Ver mais
-          </Button>
+          <Link href={`/car/${item.id}`} passHref>
+            <Button color="secondary" fullWidth>
+              Ver mais
+            </Button>
+          </Link>
         </footer>
       </div>
     </article>
