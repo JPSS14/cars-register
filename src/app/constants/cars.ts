@@ -1,4 +1,5 @@
 export interface Cars {
+  id: number;
   automaker: string;
   model: string;
   automakerModel: string;
@@ -24,6 +25,7 @@ export interface Cars {
 
 export const cars: Cars[] = [
   {
+    id: 1,
     automaker: "Ferrari",
     model: "F40",
     automakerModel: "Ferrari F40",
@@ -49,6 +51,7 @@ export const cars: Cars[] = [
     ],
   },
   {
+    id: 2,
     automaker: "McLaren",
     model: "Senna",
     automakerModel: "Mclaren Senna",
@@ -78,6 +81,7 @@ export const cars: Cars[] = [
     ],
   },
   {
+    id: 3,
     automaker: "Porsche",
     model: "Taycan 4S Cross Turismo",
     automakerModel: "Porsche Taycan 4S Cross Turismo",
@@ -103,6 +107,7 @@ export const cars: Cars[] = [
     ],
   },
   {
+    id: 4,
     automaker: "Lamborghini",
     model: "Aventador SVJ Roadster",
     automakerModel: "Lamborghini Aventador SVJ Roadster",
