@@ -133,19 +133,28 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
           <div className={styles.inputsSection}>
             <div>
               <Input
-                {...register("power.value", { required: true })}
+                {...register("power.value", {
+                  required: true,
+                  pattern: /^[0-9]*$/,
+                })}
                 label="Potência"
                 placeholder="Digite a potência do carro (cv)"
                 errorMessage={errors.power && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("torque.value", { required: true })}
+                {...register("torque.value", {
+                  required: true,
+                  pattern: /^[0-9]*$/,
+                })}
                 label="Torque"
                 placeholder="Digite o torque do carro (kgfm)"
                 errorMessage={errors.torque && "Este campo é obrigatório!"}
               />
               <Input
-                {...register("maximumSpeed.value", { required: true })}
+                {...register("maximumSpeed.value", {
+                  required: true,
+                  pattern: /^[0-9]*$/,
+                })}
                 label="Velocidade Máxima"
                 placeholder="Digite a velocidade máxima"
                 errorMessage={
