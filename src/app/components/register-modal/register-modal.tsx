@@ -23,6 +23,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     control,
     handleSubmit,
     setValue,
+    reset,
     register,
     trigger,
     formState: { errors },
@@ -57,6 +58,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     };
 
     setCarList([...carList, addRatingData]);
+    reset();
     console.log(addRatingData);
   };
 
