@@ -18,6 +18,8 @@ type RegisterContext = {
   setCarList: Dispatch<SetStateAction<Cars[]>>;
   carListFiltered: Cars[];
   handleFilterCars: (car: string) => void;
+  currentCar?: Cars;
+  setCurrentCar: (car: Cars) => void;
 };
 
 export const RegisterContext = createContext({} as RegisterContext);
@@ -33,6 +35,7 @@ export const RegisterContextProvider = ({
   const [stage, setStage] = useState<StageType>("initial");
   const [carList, setCarList] = useState(cars);
   const [carListFiltered, setCarListFiltered] = useState(cars);
+  const [currentCar, setCurrentCar] = useState<Cars>();
 
   useEffect(() => {
     setCarListFiltered(carList);
@@ -56,6 +59,8 @@ export const RegisterContextProvider = ({
         setCarList,
         carListFiltered,
         handleFilterCars,
+        currentCar,
+        setCurrentCar,
       }}
     >
       {children}
