@@ -3,15 +3,6 @@
   display: flex;
   align-items: center;
 
-  .cardContainer {
-    height: 667px;
-    border-right: 8px solid var(--mainThemeColor);
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .detailsMain {
     width: calc(100% - 556px);
     height: 667px;

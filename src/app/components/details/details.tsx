@@ -3,7 +3,7 @@
 import style from "./details.module.scss";
 import { useRegisterContext } from "@/app/contexts/register-context";
 import { useCallback, useEffect } from "react";
-import { Card } from "..";
+import { DetailsCard } from "./details-card";
 
 interface DetailsProps {
   carId: number;
@@ -26,9 +26,7 @@ export const Details = ({ carId }: DetailsProps) => {
 
   return (
     <div className={style.detailsContainer}>
-      <div className={style.cardContainer}>
-        {currentCar && <Card item={currentCar} />}
-      </div>
+      {currentCar && <DetailsCard carItem={currentCar} />}
       <main className={style.detailsMain}>
         <header className={style.detailsMainHeader}>
           <h1>Detalhes</h1>
