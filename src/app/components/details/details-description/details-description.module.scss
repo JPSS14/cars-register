@@ -1,0 +1,61 @@
+.detailsDescriptionContainer {
+  height: calc(100% - 124px);
+  position: relative;
+}
+
+.withoutDescriptionContainer {
+  width: 100%;
+  height: calc(667px - 148px);
+  border: dashed 4px var(--mainThemeColor);
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--lightThemeColor);
+  }
+
+  .withoutDescriptionText {
+    color: var(--mainThemeColor);
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    .withoutDescriptionIcon {
+      margin-right: 8px;
+    }
+  }
+}
+
+.teste {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+}
+
+.descriptionArticle {
+  padding-top: 16px;
+  height: 411px;
+
+  .descriptionArticleHeader {
+    border-left: solid 5px var(--mainThemeColor);
+    padding-left: 8px;
+    h1 {
+      font-size: 1.7rem;
+      color: var(--mainThemeColor);
+    }
+  }
+
+  .descriptionSectionListContainer {
+    overflow-y: scroll;
+    height: calc(100% - 36.8px);
+  }
+
+  .descriptionSectionContainer {
+    margin-top: 16px;
+  }
+}

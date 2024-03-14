@@ -4,6 +4,7 @@ import style from "./details.module.scss";
 import { useRegisterContext } from "@/app/contexts/register-context";
 import { useCallback, useEffect } from "react";
 import { DetailsCard } from "./details-card";
+import { DetailsDescription } from "./details-description";
 
 interface DetailsProps {
   carId: number;
@@ -59,7 +60,7 @@ export const Details = ({ carId }: DetailsProps) => {
             </div>
           )}
         </header>
-        <div className={style.descriptionContainer}></div>
+        <DetailsDescription />
       </main>
     </div>
   );
