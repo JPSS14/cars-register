@@ -45,3 +45,7 @@ export const maximumSpeedRating = (value: number) => {
     return 1;
   }
 };
+
+export const automakerModelBuilder = (model: string, automaker: string) => {
+  return `${automaker} ${model}`;
+};

@@ -7,6 +7,7 @@ import { Cars } from "@/app/constants/cars";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useRef, useState } from "react";
 import {
+  automakerModelBuilder,
   maximumSpeedRating,
   powerRating,
   torqueRating,
@@ -43,6 +44,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     const addRatingData: Cars = {
       ...data,
       id: carList.length + 1,
+      automakerModel: automakerModelBuilder(data.model, data.automaker),
       power: {
         ...data.power,
         rating: powerRating(data.power.value),
