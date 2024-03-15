@@ -60,7 +60,7 @@ export const Details = ({ carId }: DetailsProps) => {
             </div>
           )}
         </header>
-        <DetailsDescription />
+        {currentCar && <DetailsDescription carItem={currentCar} />}
       </main>
     </div>
   );
