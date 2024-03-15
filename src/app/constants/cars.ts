@@ -48,6 +48,11 @@ export const cars: Cars[] = [
         title: "Origem",
         textDescription: `No início em 1984, a fábrica de Maranello tinha começado a desenvolver um modelo superior à 288 GTO para competir contra o Porsche 959 no Grupo B da FIA. No entanto, quando a FIA colocou um ponto final na categoria Grupo B para a temporada de 1986, após a morte do piloto Henri Toivonen[1] e do navegador Sergio Cresto, Enzo Ferrari ficou com cinco unidades da chamada 288 GTO Evoluzione, e nenhuma série de corridas para inscrevê-las. O desejo de Enzo de deixar um supercarro como seu legado final, permitiu que o programa Evoluzione desenvolvesse e produzisse um carro para uso exclusivo em estradas. Um dos membros do departamento de marketing da Ferrari é citado pela frase: "Nós queríamos que fosse muito rápido, esportivo ao extremo e espartano. Os clientes estavam dizendo que nossos carros estavam se tornando muito luxuoso e confortáveis. A F40 é para os mais entusiastas dos nossos proprietários que não querem nada, além de puro desempenho. Não é um laboratório para o futuro, como o 959, não é Star Wars, e não foi criado porque a Porsche construiu o 959, teria acontecido de qualquer maneira." `,
       },
+      {
+        title: "Desenvolvimento",
+        textDescription:
+          " Ferrari F40 foi desenhada e projetada com a aerodinâmica em mente, tendo um coeficiente aerodinâmico de 0,34, boa parte graças à asa traseira[4]. Para alcançar sua velocidade máxima, o carro contava mais com sua baixa resistência ao ar do que com sua potência. A área frontal foi reduzida em relação à 288 GTO Evoluzione, o que suavizou consideravelmente o fluxo de ar. A estabilidade era prioridade antes da velocidade final, assim como o arrefecimento do motor, já que este gerava uma grande quantidade de calor. ",
+      },
     ],
   },
   {
