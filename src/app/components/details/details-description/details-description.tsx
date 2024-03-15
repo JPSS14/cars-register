@@ -2,8 +2,14 @@
 import { useState } from "react";
 import style from "./details-description.module.scss";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { Cars } from "@/app/constants/cars";
+import { DescriptionSection } from "./description-section";
 
-export const DetailsDescription = () => {
+interface DetailsDescriptionProps {
+  carItem: Cars;
+}
+
+export const DetailsDescription = ({ carItem }: DetailsDescriptionProps) => {
   const [value, setValue] = useState(true);
   return (
     <div className={style.detailsDescriptionContainer}>
@@ -13,17 +19,7 @@ export const DetailsDescription = () => {
             <h1>Descrição</h1>
           </header>
           <div className={style.descriptionSectionListContainer}>
-            <section className={style.descriptionSectionContainer}>
-              <header>
-                <h2 className={style.descriptionBlockTitle}>Title</h2>
-              </header>
-              <p className={style.descriptionBlockText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aliquid, iusto tempora dolore eveniet minus voluptates
-                repellendus. Sed vero sit eius. Animi distinctio, excepturi
-                necessitatibus labore omnis voluptas quae eligendi laborum!
-              </p>
-            </section>
+            <DescriptionSection description={carItem.description} />
           </div>
         </article>
       )}
