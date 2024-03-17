@@ -49,3 +49,15 @@ export const maximumSpeedRating = (value: number) => {
 export const automakerModelBuilder = (model: string, automaker: string) => {
   return `${automaker} ${model}`;
 };
+
+export function getLocalStorage(key: string) {
+  const data = window.localStorage.getItem(key);
+
+  return JSON.parse(data!);
+}
+
+export function setLocalStorage(key: string, value: unknown) {
+  const data = JSON.stringify(value);
+
+  return window.localStorage.setItem(key, data);
+}
