@@ -11,6 +11,7 @@ import {
   maximumSpeedRating,
   powerRating,
   torqueRating,
+  setLocalStorage,
 } from "@/app/utils/utils";
 
 interface RegisterModalProps {
@@ -60,8 +61,8 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     };
 
     setCarList([...carList, addRatingData]);
+    setLocalStorage("item_key", [...carList, addRatingData]);
     reset();
-    console.log(addRatingData);
   };
 
   const inputRef = useRef(null);
