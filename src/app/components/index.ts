@@ -16,3 +16,4 @@ export { Select } from "./select";
 export { Stepper } from "./stepper";
 export { TextArea } from "./text-area";
 export { TopSearch } from "./top-search";
+export { ResetList } from "./reset-list";
