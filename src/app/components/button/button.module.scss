@@ -57,4 +57,25 @@
       }
     }
   }
+
+  &.error {
+    background-color: var(--errorThemeColor);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--errorThemeColorHover);
+    }
+
+    &.outlined {
+      background-color: transparent;
+      color: var(--errorThemeColor);
+      border: solid 2px var(--errorThemeColor);
+      box-shadow: none;
+
+      &:hover {
+        border-color: var(--errorThemeColorHover);
+        color: var(--errorThemeColorHover);
+      }
+    }
+  }
 }

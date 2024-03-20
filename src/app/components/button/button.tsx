@@ -1,7 +1,7 @@
 import styles from "./button.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "error";
   variant?: "outlined";
   fullWidth?: boolean;
 }
