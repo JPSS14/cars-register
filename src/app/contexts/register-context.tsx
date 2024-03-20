@@ -12,6 +12,8 @@ import { Cars, cars } from "../constants/cars";
 type RegisterContext = {
   openRegisterModal: boolean;
   setOpenRegisterModal: (open: boolean) => void;
+  openRemoveModal: boolean;
+  setOpenRemoveModal: (open: boolean) => void;
   stage: StageType;
   setStage: (stage: StageType) => void;
   carList: Cars[];
@@ -32,6 +34,7 @@ export const RegisterContextProvider = ({
   children,
 }: RegisterContextProviderProps) => {
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
+  const [openRemoveModal, setOpenRemoveModal] = useState(false);
   const [stage, setStage] = useState<StageType>("initial");
   const [carList, setCarList] = useState(cars);
   const [carListFiltered, setCarListFiltered] = useState(cars);
@@ -53,6 +56,8 @@ export const RegisterContextProvider = ({
       value={{
         openRegisterModal,
         setOpenRegisterModal,
+        openRemoveModal,
+        setOpenRemoveModal,
         stage,
         setStage,
         carList,

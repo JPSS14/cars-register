@@ -1,24 +1,18 @@
+"use client";
 import { useRegisterContext } from "@/app/contexts/register-context";
-import { Button } from "..";
+import { Button, RemoveModal } from "..";
 import style from "./reset-list.module.scss";
-import { removeLocalStorage } from "@/app/utils/utils";
-import { cars } from "@/app/constants/cars";
 
 export const ResetList = () => {
-  const { setCarList } = useRegisterContext();
-
-  const handleRemoveLocalStorage = () => {
-    removeLocalStorage("item_key");
-
-    setCarList(cars);
-  };
+  const { setOpenRemoveModal, openRemoveModal } = useRegisterContext();
 
   return (
     <div className={style.resetContainer}>
+      <RemoveModal isOpen={openRemoveModal} />
       <Button
         color="error"
         variant="outlined"
-        onClick={() => handleRemoveLocalStorage()}
+        onClick={() => setOpenRemoveModal(true)}
       >
         Resetar Cards
       </Button>
