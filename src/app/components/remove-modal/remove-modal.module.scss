@@ -1,0 +1,13 @@
+.removeModalTitle {
+  font-size: 1.3rem;
+  color: var(--mainThemeColor);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
+}
