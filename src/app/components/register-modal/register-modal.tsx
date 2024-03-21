@@ -16,9 +16,10 @@ import {
 
 interface RegisterModalProps {
   isOpen: boolean;
+  currentCar?: Cars;
 }
 
-export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
+export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
   const { setStage, stage, setOpenRegisterModal, setCarList, carList } =
     useRegisterContext();
   const {
@@ -31,6 +32,9 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
     formState: { errors },
   } = useForm<Cars>({
     mode: "all",
+    defaultValues: {
+      automaker: currentCar ? currentCar.automaker : "",
+    },
   });
 
   const [descriptionIndex, setDescriptionIndex] = useState<number[]>([0]);
@@ -114,18 +118,21 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                 label="Modelo"
                 placeholder="Digite o nome do modelo"
                 errorMessage={errors.model && "Este campo é obrigatório!"}
+                defaultValue={currentCar ? currentCar.model : ""}
               />
               <Input
                 {...register("year", { required: true })}
                 label="Ano"
                 placeholder="Digite o ano do carro"
                 errorMessage={errors.year && "Este campo é obrigatório!"}
+                defaultValue={currentCar ? currentCar.year : ""}
               />
               <Input
                 {...register("image", { required: true })}
                 label="Imagem"
                 placeholder="Selecione uma imagem 1920px"
                 errorMessage={errors.image && "Este campo é obrigatório!"}
+                defaultValue={currentCar ? currentCar.image : ""}
               />
             </div>
             <div className={styles.footer}>
@@ -144,6 +151,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                 })}
                 label="Potência"
                 placeholder="Digite a potência do carro (cv)"
+                defaultValue={currentCar ? currentCar.power.value : ""}
                 errorMessage={errors.power && "Este campo é obrigatório!"}
               />
               <Input
@@ -153,6 +161,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                 })}
                 label="Torque"
                 placeholder="Digite o torque do carro (kgfm)"
+                defaultValue={currentCar ? currentCar.torque.value : ""}
                 errorMessage={errors.torque && "Este campo é obrigatório!"}
               />
               <Input
@@ -162,6 +171,7 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                 })}
                 label="Velocidade Máxima"
                 placeholder="Digite a velocidade máxima"
+                defaultValue={currentCar ? currentCar.maximumSpeed.value : ""}
                 errorMessage={
                   errors.maximumSpeed && "Este campo é obrigatório!"
                 }
@@ -182,12 +192,22 @@ export const RegisterModal = ({ isOpen }: RegisterModalProps) => {
                     {...register(`description.${index}.title`)}
                     label="Título"
                     placeholder="Digite um título"
+                    defaultValue={
+                      currentCar?.description
+                        ? currentCar.description[index].title
+                        : ""
+                    }
                   />
 
                   <TextArea
                     label="Texto"
                     placeholder="Digite uma descrição"
                     {...register(`description.${index}.textDescription`)}
+                    defaultValue={
+                      currentCar?.description
+                        ? currentCar.description[index].textDescription
+                        : ""
+                    }
                   />
                 </div>
               ))}

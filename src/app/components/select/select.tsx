@@ -20,7 +20,6 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         <select
           className={`${styles.select} ${errorMessage && styles.errorSelect}`}
           {...props}
-          defaultValue=""
         >
           <option disabled value="">
             Selecione uma opção
