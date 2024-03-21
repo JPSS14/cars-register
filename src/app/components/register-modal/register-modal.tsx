@@ -147,7 +147,7 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
               <Input
                 {...register("power.value", {
                   required: true,
-                  pattern: /^[0-9]*$/,
+                  pattern: /^\d+([.,]?\d+)$/,
                 })}
                 label="Potência"
                 placeholder="Digite a potência do carro (cv)"
@@ -157,7 +157,7 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
               <Input
                 {...register("torque.value", {
                   required: true,
-                  pattern: /^[0-9]*$/,
+                  pattern: /^\d+([.,]?\d+)$/,
                 })}
                 label="Torque"
                 placeholder="Digite o torque do carro (kgfm)"
@@ -167,7 +167,7 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
               <Input
                 {...register("maximumSpeed.value", {
                   required: true,
-                  pattern: /^[0-9]*$/,
+                  pattern: /^\d+([.,]?\d+)$/,
                 })}
                 label="Velocidade Máxima"
                 placeholder="Digite a velocidade máxima"
