@@ -26,9 +26,9 @@ export interface Cars {
 export const cars: Cars[] = [
   {
     id: 1,
-    automaker: "Ferrari",
+    automaker: "ferrari",
     model: "F40",
-    automakerModel: "Ferrari F40",
+    automakerModel: "ferrari F40",
     year: 1987,
     image: "/ferrari-f40.webp",
     power: {
@@ -57,9 +57,9 @@ export const cars: Cars[] = [
   },
   {
     id: 2,
-    automaker: "McLaren",
+    automaker: "mclaren",
     model: "Senna",
-    automakerModel: "Mclaren Senna",
+    automakerModel: "mclaren Senna",
     year: 2020,
     image: "/mclaren-senna.jpg",
     power: {
@@ -87,9 +87,9 @@ export const cars: Cars[] = [
   },
   {
     id: 3,
-    automaker: "Porsche",
+    automaker: "porsche",
     model: "Taycan 4S Cross Turismo",
-    automakerModel: "Porsche Taycan 4S Cross Turismo",
+    automakerModel: "porsche Taycan 4S Cross Turismo",
     year: 2022,
     image: "/taycan-4s-cross-turismo.webp",
     power: {
@@ -113,9 +113,9 @@ export const cars: Cars[] = [
   },
   {
     id: 4,
-    automaker: "Lamborghini",
+    automaker: "lamborghini",
     model: "Aventador SVJ Roadster",
-    automakerModel: "Lamborghini Aventador SVJ Roadster",
+    automakerModel: "lamborghini Aventador SVJ Roadster",
     year: 2020,
     image: "/Lamborghini_aventador-svj-roadster.png",
     power: {
