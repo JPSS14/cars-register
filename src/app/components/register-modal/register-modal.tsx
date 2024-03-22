@@ -66,6 +66,7 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
 
     setCarList([...carList, addRatingData]);
     setLocalStorage("item_key", [...carList, addRatingData]);
+    setStage("initial");
     reset();
   };
 
