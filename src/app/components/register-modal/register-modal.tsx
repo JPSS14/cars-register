@@ -20,8 +20,14 @@ interface RegisterModalProps {
 }
 
 export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
-  const { setStage, stage, setOpenRegisterModal, setCarList, carList } =
-    useRegisterContext();
+  const {
+    setStage,
+    stage,
+    setOpenRegisterModal,
+    setCarList,
+    carList,
+    setCurrentCar,
+  } = useRegisterContext();
   const {
     control,
     handleSubmit,
@@ -32,10 +38,9 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
     formState: { errors },
   } = useForm<Cars>({
     mode: "all",
-    defaultValues: {
-      automaker: currentCar ? currentCar.automaker : "",
-    },
   });
+
+  console.log("currentCar: ", currentCar);
 
   const [descriptionIndex, setDescriptionIndex] = useState<number[]>([0]);
 
@@ -43,15 +48,20 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
     setDescriptionIndex([...descriptionIndex, descriptionIndex.length]);
   };
 
+  const handleRemoveCarListById = (currentId?: number) => {
+    return carList.filter((item) => item.id !== currentId);
+  };
+
   const onSubmit: SubmitHandler<Cars> = (data) => {
     setOpenRegisterModal(false);
 
     const addRatingData: Cars = {
       ...data,
-      id: carList.length + 1,
+      id: currentCar ? currentCar.id : carList.length + 1,
       automakerModel: automakerModelBuilder(data.model, data.automaker),
+      year: Number(data.year),
       power: {
-        ...data.power,
+        value: Number(data.power.value),
         rating: powerRating(data.power.value),
       },
       torque: {
@@ -64,8 +74,15 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
       },
     };
 
-    setCarList([...carList, addRatingData]);
-    setLocalStorage("item_key", [...carList, addRatingData]);
+    const filteredList = handleRemoveCarListById(currentCar && currentCar.id);
+
+    if (currentCar) {
+      setCurrentCar(addRatingData);
+      console.log("addRatingData: ", addRatingData);
+    }
+
+    setCarList([...filteredList, addRatingData]);
+    setLocalStorage("item_key", [...filteredList, addRatingData]);
     setStage("initial");
     reset();
   };
@@ -101,6 +118,7 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
             <div>
               <Controller
                 name="automaker"
+                defaultValue={currentCar ? currentCar.automaker : ""}
                 control={control}
                 rules={{ required: true }}
                 render={({ field }) => (
@@ -122,11 +140,11 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
                 defaultValue={currentCar ? currentCar.model : ""}
               />
               <Input
+                defaultValue={currentCar && currentCar.year}
                 {...register("year", { required: true })}
                 label="Ano"
                 placeholder="Digite o ano do carro"
                 errorMessage={errors.year && "Este campo é obrigatório!"}
-                defaultValue={currentCar ? currentCar.year : ""}
               />
               <Input
                 {...register("image", { required: true })}
