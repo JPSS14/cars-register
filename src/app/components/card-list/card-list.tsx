@@ -7,13 +7,14 @@ interface CardListProps {
 }
 
 export const CardList = ({ items }: CardListProps) => {
+  const sortItems = items.sort((a, b) => a.id - b.id);
   return (
     <section className={styles.cardList}>
       <header className={styles.sectionHeader}>
         <h1>Resultados</h1>
       </header>
       <div className={styles.cardListGrid}>
-        {items.map((item, index) => (
+        {sortItems.map((item, index) => (
           <Card key={index} item={item} />
         ))}
         <CardBlank />
