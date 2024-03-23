@@ -1,6 +1,7 @@
 .detailsContainer {
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   .detailsMain {
@@ -25,6 +26,13 @@
           justify-content: flex-start;
         }
       }
+    }
+  }
+  @media (max-width: 925px) {
+    height: auto;
+    margin-bottom: 32px;
+    .detailsMain {
+      width: 100%;
     }
   }
 }

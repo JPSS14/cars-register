@@ -5,4 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 925px) {
+    width: 100%;
+    border-right: none;
+    margin-bottom: 32px;
+  }
 }
