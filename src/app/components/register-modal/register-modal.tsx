@@ -108,6 +108,30 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
     }
   };
 
+  const handleDescriptionTitleValidation = (index: number) => {
+    if (
+      currentCar &&
+      currentCar.description &&
+      currentCar.description[index]?.title
+    ) {
+      return currentCar.description[index].title;
+    } else {
+      return "";
+    }
+  };
+
+  const handleTextDescriptionValidation = (index: number) => {
+    if (
+      currentCar &&
+      currentCar.description &&
+      currentCar.description[index]?.textDescription
+    ) {
+      return currentCar.description[index].textDescription;
+    } else {
+      return "";
+    }
+  };
+
   return (
     // TODO: Quebrar steps do formulário em arquivos diferentes
     <Modal isOpen={isOpen}>
@@ -212,8 +236,8 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
                     label="Título"
                     placeholder="Digite um título"
                     defaultValue={
-                      currentCar?.description
-                        ? currentCar.description[index].title
+                      handleDescriptionTitleValidation(index)
+                        ? handleDescriptionTitleValidation(index)
                         : ""
                     }
                   />
@@ -223,8 +247,8 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
                     placeholder="Digite uma descrição"
                     {...register(`description.${index}.textDescription`)}
                     defaultValue={
-                      currentCar?.description
-                        ? currentCar.description[index].textDescription
+                      handleTextDescriptionValidation(index)
+                        ? handleTextDescriptionValidation(index)
                         : ""
                     }
                   />
