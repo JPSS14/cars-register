@@ -1,3 +1,5 @@
+import { Cars } from "../constants/cars";
+
 export const torqueRating = (value: number) => {
   if (value < 11 && value > 0) {
     return 1;
@@ -64,4 +66,19 @@ export const setLocalStorage = (key: string, value: unknown) => {
 
 export const removeLocalStorage = (key: string) => {
   return window.localStorage.removeItem(key);
+};
+
+export const hasDescription = (carItem: Cars) => {
+  if (carItem.description) {
+    if (
+      carItem.description.length === 1 &&
+      carItem.description[0].textDescription === "" &&
+      carItem.description[0].title === ""
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  return true;
 };
