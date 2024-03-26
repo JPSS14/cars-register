@@ -82,3 +82,7 @@ export const hasDescription = (carItem: Cars) => {
   }
   return true;
 };
+
+export const numberToArray = (value: number) => {
+  return new Array(value).fill(0).map((_, index) => index);
+};
