@@ -40,8 +40,6 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
     mode: "all",
   });
 
-  console.log("currentCar: ", currentCar);
-
   const [descriptionIndex, setDescriptionIndex] = useState<number[]>([0]);
 
   const handleAddDescription = () => {
@@ -78,7 +76,6 @@ export const RegisterModal = ({ isOpen, currentCar }: RegisterModalProps) => {
 
     if (currentCar) {
       setCurrentCar(addRatingData);
-      console.log("addRatingData: ", addRatingData);
     }
 
     setCarList([...filteredList, addRatingData]);

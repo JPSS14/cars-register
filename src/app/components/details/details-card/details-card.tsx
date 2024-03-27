@@ -9,7 +9,7 @@ interface DetailsCardProps {
 export const DetailsCard = ({ carItem }: DetailsCardProps) => {
   return (
     <div className={style.detailsCardContainer}>
-      {carItem && <Card item={carItem} />}
+      {carItem && <Card item={carItem} isEditCard />}
     </div>
   );
 };
