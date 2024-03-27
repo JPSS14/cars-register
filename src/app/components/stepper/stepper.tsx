@@ -3,7 +3,11 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import styles from "./stepper.module.scss";
 import { useRegisterContext } from "@/app/contexts/register-context";
 
-export const Stepper = () => {
+interface StepperProps {
+  noStepBack?: boolean;
+}
+
+export const Stepper = ({ noStepBack }: StepperProps) => {
   const { stage, setStage, setOpenRegisterModal } = useRegisterContext();
   const getStepText = () => {
     switch (stage) {
@@ -33,11 +37,17 @@ export const Stepper = () => {
   return (
     <div className={styles.stepperContainer}>
       <div className={styles.stepper}>
-        <FaArrowLeftLong
-          className={styles.leftIcon}
-          onClick={() => getBack()}
-        />
-        <span className={styles.stepperName}>{getStepText()}</span>
+        {!noStepBack && (
+          <FaArrowLeftLong
+            className={styles.leftIcon}
+            onClick={() => getBack()}
+          />
+        )}
+        <span
+          className={`${noStepBack ? styles.noStepBack : styles.stepperName}`}
+        >
+          {getStepText()}
+        </span>
       </div>
       <div className={styles.loadingContainer}>
         <div className={`${styles.loadingBar} ${styles[stage]}`}></div>

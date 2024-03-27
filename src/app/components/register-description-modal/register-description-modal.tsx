@@ -87,7 +87,7 @@ export const RegisterDescriptionModal = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Modal isOpen={openRegisterDescriptionModal}>
-        <Stepper />
+        <Stepper noStepBack />
         {currentCar?.description && (
           <div className={styles.inputsSection}>
             <div className={styles.description}>
