@@ -1,0 +1,26 @@
+.inputsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 72.2px);
+
+  & input,
+  select,
+  textarea {
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+
+  button:first-child {
+    margin-bottom: 8px;
+  }
+}
