@@ -17,10 +17,12 @@ export interface Cars {
     value: number;
     rating: number;
   };
-  description?: {
-    title?: string;
-    textDescription?: string;
-  }[];
+  description: Description[];
+}
+
+export interface Description {
+  title?: string;
+  textDescription?: string;
 }
 
 export const cars: Cars[] = [
