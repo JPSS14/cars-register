@@ -28,6 +28,11 @@
       margin-right: 8px;
     }
   }
+  @media (max-width: 400px) {
+    .withoutDescriptionText {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .withDescription {
