@@ -11,10 +11,12 @@ export const Rating = ({ value }: RatingProps) => {
   return (
     <div className={styles.ratingContainer}>
       {[...Array(value)].map((_, index) => (
-        <RiStarFill key={index} />
+        <RiStarFill key={index} data-testid="filled-star" />
       ))}
       {emptyStars > 0 &&
-        [...Array(emptyStars)].map((_, index) => <RiStarLine key={index} />)}
+        [...Array(emptyStars)].map((_, index) => (
+          <RiStarLine key={index} data-testid="empty-star" />
+        ))}
     </div>
   );
 };
