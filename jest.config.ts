@@ -21,6 +21,10 @@ const config: Config = {
     "!**/vendor/**",
     "!**/index.ts",
     "!**/types.ts",
+    "!**/coverage/**",
+    "!jest.config.ts",
+    "!next-env.d.ts",
+    "!**/constants/**",
   ],
   moduleNameMapper: {
     "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__ mocks __/fileMock.js",
