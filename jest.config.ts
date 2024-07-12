@@ -27,6 +27,7 @@ const config: Config = {
     "!**/constants/**",
   ],
   moduleNameMapper: {
+    "^@/app/(.*)$": "<rootDir>/src/app/$1",
     "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__ mocks __/fileMock.js",
   },
   // Add more setup options before each test is run
