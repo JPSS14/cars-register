@@ -9,6 +9,7 @@ export const CardBlank = () => {
     <div
       className={styles.cardBlank}
       onClick={() => setOpenRegisterModal(true)}
+      data-testid="cardBlank"
     >
       <div className={styles.contentContainer}>
         <Image
