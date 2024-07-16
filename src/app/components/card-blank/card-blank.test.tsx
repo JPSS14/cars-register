@@ -20,9 +20,19 @@ describe("CardBlank component test", () => {
     render(<CardBlank />);
 
     const cardBlankRender = screen.getByTestId(/cardBlank/i);
+    expect(cardBlankRender).toBeInTheDocument();
+
+    const imageRender = screen.getByAltText(/Mini logo Cars Register/i);
+    expect(imageRender).toBeInTheDocument();
+    expect(imageRender).toHaveAttribute("src", "/cars-register-mini-logo.svg");
+  });
+
+  it("a correct open modal behavior", () => {
+    render(<CardBlank />);
+
+    const cardBlankRender = screen.getByTestId(/cardBlank/i);
     fireEvent.click(cardBlankRender);
 
-    expect(cardBlankRender).toBeInTheDocument();
     expect(mockSetOpenRegisterModal).toHaveBeenCalledWith(true);
   });
 });
