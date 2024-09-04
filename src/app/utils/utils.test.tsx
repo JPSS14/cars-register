@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { powerRating, torqueRating } from "./utils";
+import { maximumSpeedRating, powerRating, torqueRating } from "./utils";
 
 describe("a utils torqueRating test", () => {
   it("a torqueRating test 100", () => {
@@ -42,5 +42,23 @@ describe("a utils powerRating test", () => {
 
   it("a powerRating 84", () => {
     expect(powerRating(84)).toBe(1);
+  });
+});
+
+describe("a utils maximumSpeedRating test", () => {
+  it("a maximumSpeedRating 321", () => {
+    expect(maximumSpeedRating(321)).toBe(5);
+  });
+  it("a maximumSpeedRating 319", () => {
+    expect(maximumSpeedRating(319)).toBe(4);
+  });
+  it("a maximumSpeedRating 269", () => {
+    expect(maximumSpeedRating(269)).toBe(3);
+  });
+  it("a maximumSpeedRating 229", () => {
+    expect(maximumSpeedRating(229)).toBe(2);
+  });
+  it("a maximumSpeedRating 167", () => {
+    expect(maximumSpeedRating(167)).toBe(1);
   });
 });
