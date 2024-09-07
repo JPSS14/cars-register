@@ -1,5 +1,10 @@
 import "@testing-library/jest-dom";
-import { maximumSpeedRating, powerRating, torqueRating } from "./utils";
+import {
+  automakerModelBuilder,
+  maximumSpeedRating,
+  powerRating,
+  torqueRating,
+} from "./utils";
 
 describe("a utils torqueRating test", () => {
   it("a torqueRating test 100", () => {
@@ -60,5 +65,11 @@ describe("a utils maximumSpeedRating test", () => {
   });
   it("a maximumSpeedRating 167", () => {
     expect(maximumSpeedRating(167)).toBe(1);
+  });
+});
+
+describe("a utils automakerModelBuilder test", () => {
+  it("a correct automakerModelBuilder result", () => {
+    expect(automakerModelBuilder("Gol", "Volkswagen")).toBe("Volkswagen Gol");
   });
 });
