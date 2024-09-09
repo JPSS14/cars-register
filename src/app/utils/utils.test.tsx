@@ -2,6 +2,7 @@ import "@testing-library/jest-dom";
 import {
   automakerModelBuilder,
   maximumSpeedRating,
+  numberToArray,
   powerRating,
   torqueRating,
 } from "./utils";
@@ -71,5 +72,11 @@ describe("a utils maximumSpeedRating test", () => {
 describe("a utils automakerModelBuilder test", () => {
   it("a correct automakerModelBuilder result", () => {
     expect(automakerModelBuilder("Gol", "Volkswagen")).toBe("Volkswagen Gol");
+  });
+});
+
+describe("a utils numberToArray test", () => {
+  it("a correct numberToArray test", () => {
+    expect(numberToArray(5)).toStrictEqual([0, 1, 2, 3, 4]);
   });
 });
