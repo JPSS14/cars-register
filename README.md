@@ -1,5 +1,10 @@
 # cars-register
 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jpss14/cars-register)
+![Last Commit](https://img.shields.io/github/last-commit/jpss14/cars-register)
+![GitHubissues](https://img.shields.io/github/issues/jpss14/cars-register)
+![GitHub Stars](https://img.shields.io/github/stars/jpss14/cars-register)
+
 Desafio de UX + Front
 
 O projeto Cars Register, é uma aplicação que permite ao usuário cadastrar veículos, e dependendo dos dados o veículo cadastrado recebe estrelas como uma forma de status. Cada veículo é representado em forma de um card.
