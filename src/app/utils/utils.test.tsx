@@ -1,11 +1,17 @@
 import "@testing-library/jest-dom";
 import {
   automakerModelBuilder,
+  hasDescription,
   maximumSpeedRating,
   numberToArray,
   powerRating,
   torqueRating,
 } from "./utils";
+import {
+  mockCarsHasDescription,
+  mockCarsVoidDescription,
+  mockCarsWithoutDescription,
+} from "./mocks";
 
 describe("a utils torqueRating test", () => {
   it("a torqueRating test 100", () => {
@@ -78,5 +84,15 @@ describe("a utils automakerModelBuilder test", () => {
 describe("a utils numberToArray test", () => {
   it("a correct numberToArray test", () => {
     expect(numberToArray(5)).toStrictEqual([0, 1, 2, 3, 4]);
+  });
+});
+
+describe("a utils hasDescription", () => {
+  it("a void description", () => {
+    expect(hasDescription(mockCarsVoidDescription)).toBe(false);
+  });
+
+  it("a with description", () => {
+    expect(hasDescription(mockCarsHasDescription)).toBe(true);
   });
 });
