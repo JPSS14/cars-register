@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import {
   automakerModelBuilder,
+  getLocalStorage,
   hasDescription,
   maximumSpeedRating,
   numberToArray,
@@ -94,5 +95,47 @@ describe("a utils hasDescription", () => {
 
   it("a with description", () => {
     expect(hasDescription(mockCarsHasDescription)).toBe(true);
+  });
+});
+
+describe("a getLocalStorage test", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("a correct value to localStorage", () => {
+    const key = "testKey";
+    const value = { name: "João" };
+
+    // Criar um mock do localStorage
+    const localStorageMock = {
+      getItem: jest.fn().mockReturnValue(JSON.stringify(value)),
+    };
+
+    // Substituir o window.localStorage pelo mock
+    Object.defineProperty(window, "localStorage", { value: localStorageMock });
+
+    const result = getLocalStorage(key);
+    expect(result).toEqual(value);
+
+    expect(localStorage.getItem).toHaveBeenCalledWith(key);
+  });
+
+  it("a without localStorage", () => {
+    const key = "missingKey";
+
+    // Criar um mock do localStorage retornando null
+    const localStorageMock = {
+      getItem: jest.fn().mockReturnValue(null),
+    };
+
+    // Substituir o window.localStorage pelo mock
+    Object.defineProperty(window, "localStorage", { value: localStorageMock });
+
+    const result = getLocalStorage(key);
+    expect(result).toBeNull();
+
+    // Verificar se o localStorage.getItem foi chamado com a chave correta
+    expect(localStorage.getItem).toHaveBeenCalledWith(key);
   });
 });
