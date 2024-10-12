@@ -6,6 +6,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/jpss14/cars-register)
 ![GitHub License](https://img.shields.io/github/license/jpss14/cars-register)
 ![GitHub Top Language](https://img.shields.io/github/languages/top/jpss14/cars-register)
+![GitHub Number of languages](https://img.shields.io/github/languages/count/JPSS14/cars-register)
 
 Desafio de UX + Front
 
