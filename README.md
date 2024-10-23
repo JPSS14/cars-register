@@ -34,3 +34,7 @@ npm run dev
 # or
 yarn dev
 ```
+
+## Contact
+
+João Pedro Scarabelli Silva - [LinkedIn](https://www.linkedin.com/notifications/?filter=all)
