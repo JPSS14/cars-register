@@ -37,4 +37,4 @@ yarn dev
 
 ## Contact
 
-João Pedro Scarabelli Silva - [LinkedIn](https://www.linkedin.com/notifications/?filter=all)
+João Pedro Scarabelli Silva - [LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-s-silva/)
